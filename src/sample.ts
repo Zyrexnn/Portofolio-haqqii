@@ -1,15 +1,14 @@
 const author = {
-  name: `Haqqi`,
+  name: `M. Khairul Haqqi`,
   nickname: `haqqi`,
-  tiktok: `#`,
-  ig: `#`,
-  x: `#`,
-  email: "mailto:your-email@example.com",
+  ig: `https://www.instagram.com/kaigraph_`,
+  wa: `https://wa.me/6289503953245`,
+  email: "mailto:mkhairulhaqqi25@gmail.com",
 };
 
 const buy = {
-  title: `See on Github`,
-  link: `https://github.com/Zyrexnn/Portofolio-haqqii`,
+  title: `Chat on WhatsApp`,
+  link: `https://wa.me/6289503953245`,
 };
 
 export { author, buy };

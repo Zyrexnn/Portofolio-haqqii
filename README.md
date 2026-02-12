@@ -1,8 +1,8 @@
 # Portofolio Haqqi
 
-Portofolio Haqqi is a sleek Astro portfolio built for creatives and developers. Featuring responsive layouts, customizable sections, and a bold brutalist design, it’s made to showcase my work with style.
+Personal portfolio of **M. Khairul Haqqi** — Graphic Designer & Animator specializing in motion graphics, illustration, and 3D animation.
 
-![basics](./src/assets/demo/thumbnail.png)
+Built with [Astro](https://astro.build/), [TailwindCSS](https://tailwindcss.com/), and [GSAP](https://gsap.com/).
 
 ## 🧞 Commands
 
@@ -13,4 +13,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm install`   | Installs dependencies                       |
 | `npm run dev`   | Starts local dev server at `localhost:4321` |
 | `npm run build` | Build your production site to `./dist/`     |
-
