@@ -13,7 +13,7 @@ const links = [
 const { pathname } = Astro.url
 ---
 
-<header class="relative border-b-3 themed-border p-4 md:p-7 overflow-hidden" style="background-color: var(--main-bg);">
+<header class="relative border-b-3 themed-border p-4 md:p-7 z-50" style="background-color: var(--main-bg); overflow-x: clip;">
     <img src={svgPinkStar.src} alt="svg" width="80" class="absolute -right-9 -top-4 themed-svg" />
     <img src={svgPinkStar.src} alt="svg" width="80" class="absolute -left-8 -bottom-5 hidden md:block themed-svg" />
 

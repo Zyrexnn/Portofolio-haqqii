@@ -165,7 +165,7 @@ body {
   right: 0;
   background: var(--card-bg);
   border: 2px solid var(--border-color);
-  z-index: 100;
+  z-index: 9999;
   min-width: 160px;
   display: none;
   box-shadow: 4px 4px 0px var(--shadow-color);
@@ -173,6 +173,12 @@ body {
 
 .theme-dropdown.open {
   display: block;
+}
+
+/* Ensure the wrapper has proper stacking context */
+#theme-wrapper {
+  position: relative;
+  z-index: 9999;
 }
 
 .theme-option {
