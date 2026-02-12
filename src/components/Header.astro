@@ -13,11 +13,11 @@ const links = [
 const { pathname } = Astro.url
 ---
 
-<header class="relative border-b-3 themed-border p-7 overflow-hidden" style="background-color: var(--main-bg);">
+<header class="relative border-b-3 themed-border p-4 md:p-7 overflow-hidden" style="background-color: var(--main-bg);">
     <img src={svgPinkStar.src} alt="svg" width="80" class="absolute -right-9 -top-4 themed-svg" />
     <img src={svgPinkStar.src} alt="svg" width="80" class="absolute -left-8 -bottom-5 hidden md:block themed-svg" />
 
-    <div class="flex items-center gap-3 max-w-[310px] md:max-w-xl m-auto relative z-10">
+    <div class="flex items-center gap-3 max-w-[360px] md:max-w-xl m-auto relative z-10">
         <div class="flex flex-1 border-3 themed-border themed-card relative">
             <!-- top boxes -->
             <div class="size-2 themed-card border-2 themed-border absolute -top-2 -right-2"></div>
@@ -29,8 +29,8 @@ const { pathname } = Astro.url
         
             <nav class="flex w-full items-center p-2 md:p-0">
                 <div class="flex-1 font-bold">
-                    <a href="/" class="flex items-center gap-2 pl-3" style="color: var(--text-color);">
-                        <img src={logoStar.src} alt="logo" width="26" class="themed-svg" /> {author.nickname}
+                    <a href="/" class="flex items-center gap-2 pl-2 md:pl-3 text-sm md:text-base" style="color: var(--text-color);">
+                        <img src={logoStar.src} alt="logo" width="22" class="themed-svg md:w-[26px]" /> {author.nickname}
                     </a>
                 </div>
                 <a href="#" class="flex md:hidden" id="menu-open" style="color: var(--text-color);">
@@ -48,10 +48,8 @@ const { pathname } = Astro.url
             </nav>
         </div>
         
-        <!-- Theme Switcher -->
-        <div class="hidden md:block">
-            <ThemeSwitcher />
-        </div>
+        <!-- Theme Switcher — visible on ALL devices -->
+        <ThemeSwitcher />
     </div>
   </header>
 
@@ -71,9 +69,6 @@ const { pathname } = Astro.url
             </li>
         ))}
     </ul>
-    <div class="flex justify-center mt-10">
-        <ThemeSwitcher />
-    </div>
   </div>
 
 
