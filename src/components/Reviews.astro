@@ -33,38 +33,38 @@ const experiences = [
     <div class="max-w-4xl mx-auto pb-20 overflow-hidden">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="flex relative">
-          <h1 class="text-3xl">Education & Experience</h1>
-          <img src={svgNew.src} alt="arrow" width="40" class="absolute -right-3 md:-right-10 bottom-0" />
+          <h1 class="text-3xl" style="color: var(--text-color);">Education & Experience</h1>
+          <img src={svgNew.src} alt="arrow" width="40" class="absolute -right-3 md:-right-10 bottom-0 themed-svg" />
         </div>
       </div>
   
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
         <!-- Education -->
-        <div class="bg-white border-2 p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.3)]">
+        <div class="themed-card border-2 themed-border p-6" style="box-shadow: 6px 6px 0px var(--shadow-color);">
           <div class="flex items-center gap-2 mb-4">
-            <img src={svgPinkStar.src} alt="star" width="24" />
-            <h2 class="text-xl font-bold uppercase tracking-wide">Education</h2>
+            <img src={svgPinkStar.src} alt="star" width="24" class="themed-svg" />
+            <h2 class="text-xl font-bold uppercase tracking-wide" style="color: var(--text-color);">Education</h2>
           </div>
-          <div class="border-l-4 border-[var(--yellow)] pl-4">
-            <h3 class="text-lg font-semibold">{education.school}</h3>
-            <p class="font-medium text-gray-600">{education.major}</p>
-            <p class="text-sm text-gray-500 mt-1">{education.period}</p>
-            <p class="mt-2">{education.desc}</p>
+          <div class="border-l-4 pl-4" style="border-color: var(--yellow);">
+            <h3 class="text-lg font-semibold" style="color: var(--text-color);">{education.school}</h3>
+            <p class="font-medium" style="color: var(--text-muted);">{education.major}</p>
+            <p class="text-sm mt-1" style="color: var(--text-muted);">{education.period}</p>
+            <p class="mt-2" style="color: var(--text-color);">{education.desc}</p>
           </div>
         </div>
 
         <!-- Experience -->
-        <div class="bg-white border-2 p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.3)]">
+        <div class="themed-card border-2 themed-border p-6" style="box-shadow: 6px 6px 0px var(--shadow-color);">
           <div class="flex items-center gap-2 mb-4">
-            <img src={svgPinkStar.src} alt="star" width="24" />
-            <h2 class="text-xl font-bold uppercase tracking-wide">Experience</h2>
+            <img src={svgPinkStar.src} alt="star" width="24" class="themed-svg" />
+            <h2 class="text-xl font-bold uppercase tracking-wide" style="color: var(--text-color);">Experience</h2>
           </div>
           <div class="flex flex-col gap-5">
             {experiences.map(item => (
-              <div class="border-l-4 border-[var(--blue)] pl-4">
-                <h3 class="text-lg font-semibold">{item.title}</h3>
-                <p class="text-sm text-gray-500">{item.period}</p>
-                <p class="mt-1">{item.desc}</p>
+              <div class="border-l-4 pl-4" style="border-color: var(--blue);">
+                <h3 class="text-lg font-semibold" style="color: var(--text-color);">{item.title}</h3>
+                <p class="text-sm" style="color: var(--text-muted);">{item.period}</p>
+                <p class="mt-1" style="color: var(--text-color);">{item.desc}</p>
               </div>
             ))}
           </div>

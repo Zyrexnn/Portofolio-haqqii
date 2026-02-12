@@ -25,23 +25,23 @@ const portfolio = [
 
 <section class="py-25 space-y-10 px-5" id="work">
     <div class="max-w-md mx-auto relative ">
-      <h1 class="text-4xl font-medium text-center">My Portfolio</h1>
-      <img src={svgUnderline.src} alt="arrow" width="140" class="absolute left-50 -bottom-1" />
+      <h1 class="text-4xl font-medium text-center" style="color: var(--text-color);">My Portfolio</h1>
+      <img src={svgUnderline.src} alt="arrow" width="140" class="absolute left-50 -bottom-1 themed-svg" />
     </div>
   
     <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"> 
       {portfolio.map(item => ( 
-        <a href={item.link} target="_blank" class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
-          <div class="w-full h-[200px] overflow-hidden border-2">
+        <a href={item.link} target="_blank" class="flex flex-col themed-card p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_var(--shadow-color)]" style="border: 0;">
+          <div class="w-full h-[200px] overflow-hidden border-2 themed-border">
            <img src={item.cover} alt={item.name} class="w-full h-full object-cover" />
           </div>
           <div class="space-y-1 pt-4">
             <div class="flex pr-2">
-              <h2 class="text-xl font-medium flex-1">{item.name}</h2>
-              <img src={arrowCard.src} alt="arrow" width="25" />
+              <h2 class="text-xl font-medium flex-1" style="color: var(--text-color);">{item.name}</h2>
+              <img src={arrowCard.src} alt="arrow" width="25" class="themed-svg" />
             </div>
-            <p class="font-medium text-sm text-gray-500">{item.desc}</p>
-            <p class="mr-10 text-sm">{item.detail}</p>
+            <p class="font-medium text-sm" style="color: var(--text-muted);">{item.desc}</p>
+            <p class="mr-10 text-sm" style="color: var(--text-color);">{item.detail}</p>
           </div>
           <Bars />
         </a>

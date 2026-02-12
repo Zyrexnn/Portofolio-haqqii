@@ -1,0 +1,78 @@
+---
+const themes = [
+  { id: 'light', name: 'Light', icon: '☀️' },
+  { id: 'dark', name: 'Dark', icon: '🌙' },
+  { id: 'neon', name: 'Neon', icon: '⚡' },
+  { id: 'ocean', name: 'Ocean', icon: '🌊' },
+]
+---
+
+<div class="relative" id="theme-wrapper">
+  <button class="theme-switcher" id="theme-toggle" aria-label="Change theme">
+    <span id="theme-icon">☀️</span>
+    <span id="theme-label" class="hidden md:inline">Light</span>
+    <i class="ri-arrow-down-s-line"></i>
+  </button>
+
+  <div class="theme-dropdown" id="theme-dropdown">
+    {themes.map(t => (
+      <button class="theme-option" data-theme-value={t.id}>
+        <span class="dot"></span>
+        <span>{t.icon} {t.name}</span>
+      </button>
+    ))}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('#theme-toggle');
+  const dropdown = document.querySelector('#theme-dropdown');
+  const icon = document.querySelector('#theme-icon');
+  const label = document.querySelector('#theme-label');
+  const options = document.querySelectorAll('.theme-option');
+
+  const themeMeta: Record<string, { name: string; icon: string }> = {
+    light: { name: 'Light', icon: '☀️' },
+    dark: { name: 'Dark', icon: '🌙' },
+    neon: { name: 'Neon', icon: '⚡' },
+    ocean: { name: 'Ocean', icon: '🌊' },
+  };
+
+  // Load saved theme
+  const saved = localStorage.getItem('theme') || 'light';
+  applyTheme(saved);
+
+  toggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown?.classList.toggle('open');
+  });
+
+  options.forEach(opt => {
+    opt.addEventListener('click', () => {
+      const value = (opt as HTMLElement).dataset.themeValue || 'light';
+      applyTheme(value);
+      localStorage.setItem('theme', value);
+      dropdown?.classList.remove('open');
+    });
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', () => {
+    dropdown?.classList.remove('open');
+  });
+
+  function applyTheme(theme: string) {
+    document.documentElement.setAttribute('data-theme', theme);
+
+    if (icon) icon.textContent = themeMeta[theme]?.icon || '☀️';
+    if (label) label.textContent = themeMeta[theme]?.name || 'Light';
+
+    // Update active state
+    options.forEach(opt => {
+      const val = (opt as HTMLElement).dataset.themeValue;
+      opt.classList.toggle('active', val === theme);
+    });
+  }
+});
+</script>

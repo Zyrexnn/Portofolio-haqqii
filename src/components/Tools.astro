@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
   
 
 
-<section class="bg-black py-6 relative z-5">
+<section class="py-6 relative z-5" style="background-color: var(--tools-bg);">
     <div class="overflow-hidden">
         <div class="flex items-center gap-10 md:gap-30" id="cloned">
             {mytools.map(item => (
-              <div class="text-white flex-1 text-2xl whitespace-nowrap"> {item} </div>
+              <div class="flex-1 text-2xl whitespace-nowrap" style="color: var(--tools-text);"> {item} </div>
             ))}
         </div>
     </div>
